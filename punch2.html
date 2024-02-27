@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html>
+
+<head>
+<style type="text/css">
+
+body, html {
+  cursor: url(https://static.wixstatic.com/media/2ada10_492c9c84380e410b886b646de0a4bebf~mv2.png), pointer;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+  .gfg {position: relative;}
+  .back {
+
+  background: url('https://static.wixstatic.com/media/2ada10_28c232f76ffe4bbbbf0e4920442a52a7~mv2.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+  .text-container {
+    position: absolute;
+    left: calc(2.5vw + 2.5vh);
+    top: calc(2.5vw + 2.5vh);
+  }
+  .text-container2 {
+    position: absolute;
+    right: calc(2.5vw + 2.5vh);
+    top: calc(2.5vw + 2.5vh);
+  }
+  .responsive {
+  width: auto;
+  max-height: 100%;
+}
+</style>
+<script type="text/javascript">
+
+    var clicks = 0;
+  // wix click 'calm'
+    function init () {
+      window.onmessage = (event) => {
+        if (event.data) {
+           //document.getElementById("clicks").innerHTML = 100000;
+           window.parent.postMessage(clicks.toString(), "https://alvischeungkw.wixsite.com/page/game1");
+        }
+      }
+    }
+  // mouse down handler
+    function hello() {
+      // change "punch count"
+      clicks += 1;
+      document.getElementById("clicks").innerHTML = clicks;
+      // change cursor position
+      document.body.style.cursor = 'url(https://static.wixstatic.com/media/2ada10_492c9c84380e410b886b646de0a4bebf~mv2.png) 7 0, pointer';
+      // change picture
+      if(clicks>=100){
+      document.getElementById("picture").src="https://static.wixstatic.com/media/2ada10_f3a22178c1a847be9373e3a67bff6ada~mv2.jpg"
+      } else if (clicks>=50){
+      document.getElementById("picture").src="https://static.wixstatic.com/media/2ada10_a2444ebd263541a0982572bfde181f53~mv2.jpg"
+      } else if (clicks>=10){
+      document.getElementById("picture").src="https://static.wixstatic.com/media/2ada10_4cce5d140efd44928b1f7fa11493b13f~mv2.jpg"
+      };
+    };
+  // mouse up handler
+    function moused() {
+      // change back cursor position
+      document.body.style.cursor = 'url(https://static.wixstatic.com/media/2ada10_492c9c84380e410b886b646de0a4bebf~mv2.png), pointer';      
+    };
+  
+
+</script>
+</head>
+
+<body class="back" onload="init();">
+<div id="cursor" ></div>
+<div onmousedown="hello()" onmouseup="moused()">
+	<div class="text-container">
+		<b style="font-size:calc(2.5vw + 2.5vh);">Punch count: <a id="clicks">0</a></b>
+	</div>
+	<div class="text-container2">
+      		<button type="button" class="button-1" onClick="window.location.reload();">
+         		 <b style="">Reset</b></button>
+	</div>
+
+</div>
+
+</body>
+
+</html>
