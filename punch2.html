@@ -23,6 +23,8 @@ body, html {
     position: absolute;
     left: calc(2.5vw + 2.5vh);
     top: calc(2.5vw + 2.5vh);
+    height: 100%;
+    width: 100%;
   }
   .text-container2 {
     position: absolute;
@@ -79,8 +81,9 @@ body, html {
 		<b style="font-size:calc(2.5vw + 2.5vh);">Punch count: <a id="clicks">0</a></b>
 	</div>
 	<div class="text-container2">
-      		<button type="button" class="button-1" onClick="window.location.reload();">
-         		 <b style="">Reset</b></button>
+      	<button type="button" onClick="window.location.reload();">
+        	<b style="">Reset</b>
+		</button>
 	</div>
 
 </div>
